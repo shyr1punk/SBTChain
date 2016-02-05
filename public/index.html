@@ -1,0 +1,44 @@
+<html lang="en">
+    <head>
+        <title>SB Chain</title>
+        <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+        <script src="jquery/dist/jquery.min.js"></script>
+        <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="bootstrap/dist/css/bootstrap-theme.min.css">
+        <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="angular/angular.min.js"></script>
+        <script src="angular-ui-bootstrap/src/buttons/buttons.js"></script>
+        <script src="js/chain-storage.js"></script>
+    </head>
+    <body ng-app="chainStorageApp">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand">S*bank BlockChain Storage</a>
+          </div>
+        </div>
+      </nav>
+
+      <div ng-controller="ChainStorageCtrl">
+        <div class="col-lg-5">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Input some data" ng-model="dataItem">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button" ng-click="sendToBlockChain(dataItem);">Send to blockchain</button>
+            </span>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <table class="table table-striped">
+                <tr ng-repeat="transaction in transactions track by $index" ng-click="getDataFromChain(transaction);">
+                  <td>{{ transaction | limitTo:40 }}...</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </body>
+</html>

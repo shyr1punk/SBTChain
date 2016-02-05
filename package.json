@@ -6,6 +6,7 @@
   "dependencies": {
     "express": "4.13.4",
     "body-parser": "1.14.2",
-    "web3": "0.14.0"
+    "web3": "0.14.0",
+    "bower": "1.7.7"
   }
 }
