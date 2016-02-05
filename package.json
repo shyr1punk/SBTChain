@@ -1,0 +1,11 @@
+{
+  "license" : "GPL-3.0",
+
+  "description" : "REST server app that provised POST/GET json data in a private ethereum blockchain",
+
+  "dependencies": {
+    "express": "4.13.4",
+    "body-parser": "1.14.2",
+    "web3": "0.14.0"
+  }
+}
